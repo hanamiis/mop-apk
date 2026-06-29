@@ -3,7 +3,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: 0;
   background: linear-gradient(180deg, #f6f1ea 0%, #ece6df 100%);
 }
 
