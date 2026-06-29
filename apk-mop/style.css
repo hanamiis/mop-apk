@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(180deg, #f6f1ea 0%, #ece6df 100%);
+}
+
+.home,
+.landing {
+  position: relative;
+  width: min(100%, 938px);
+  margin: 0 auto;
+  background-color: #fefdfd;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border-radius: 28px;
+}
+
+.home {
+  max-width: 938px;
+  aspect-ratio: 938 / 1408;
+}
+
+.home .home-pages,
+.landing .landing-pages {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .button-start {
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%, -50%);
+  width: 225px;
+  height: 120px;
+  padding: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.home .button-start img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home .button-start:hover {
+  transform: translate(-50%, -50%) scale(1.03);
+  filter: brightness(1.02);
+}
+
+.home .button-start:focus-visible {
+  outline: none;
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
+.landing {
+  max-width: 929px;
+  aspect-ratio: 929 / 1392;
+}
+
+.landing .track-overlays {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.landing .track-link {
+  position: absolute;
+  display: block;
+  width: 6.5%;
+  height: 7.5%;
+  min-width: 44px;
+  min-height: 40px;
+  border: 2px solid rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  border-radius: 50%;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
+}
+
+.landing .track-link:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+.landing .track-link-1 {
+  right: 32.2%;
+  top: 66.4%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.landing .track-link-2{
+  right:38%;
+  top: 63.3%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.landing .track-link-3 {
+  left: 54%;
+  top: 29%;
+}
+
+.landing .track-link-4 {
+  left: 18%;
+  top: 46%;
+}
+
+.landing .track-link-5 {
+  left: 36%;
+  top: 46%;
+}
+
+.landing .track-link-6 {
+  right:38%;
+  top: 63.3%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.landing .track-link-7 {
+  right:60.5%;
+  top: 75.9%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.landing .track-link-8 {
+ right: 57.2%;
+  top: 80.0%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.landing .track-link-9 {
+  right: 51.5%;
+  top: 82.9%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+  }
+
+  .home,
+  .landing {
+    width: min(100%, calc(100vw - 24px));
+    border-radius: 18px;
+  }
+}
+
+.track {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 936px;
+  min-height: 1403px;
+  position: relative;
+}
+
+.track .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 936px;
+  height: 1403px;
+  aspect-ratio: 0.67;
+  object-fit: cover;
+}
+
+.track .track-play-btn {
+  position: relative;
+  top: 915px;
+  left: 435px;
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  color: #111;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.track .button-back-to-home {
+  position: absolute;
+  top: 1131px;
+  left: 354px;
+  width: 220px;
+  height: 70px;
+  background-color: transparent;
+}
+
+.track .button-next {
+  position: absolute;
+  top: 933px;
+  left: 585px;
+  background-color: #d9d9d9;
+  opacity: 0;
+}
+
+.track .frame {
+  position: absolute;
+  top: 914px;
+  left: 436px;
+  width: 64px;
+  height: 59px;
+  display: flex;
+}
+
+.track .sound-link {
+  width: 64px;
+  height: 26px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
