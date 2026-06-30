@@ -1,6 +1,11 @@
+html, body {
+  height: 100%;
+  overflow: hidden; /* kunci: cegah scroll atas-bawah maupun kiri-kanan */
+}
+
 body {
   margin: 0;
-  min-height: 100vh;
+  height: 100dvh; /* dvh = tinggi viewport "asli" yang sudah memperhitungkan address bar HP */
   display: grid;
   place-items: center;
   padding: 0;
@@ -17,7 +22,6 @@ body {
 .home,
 .landing {
   position: relative;
-  width: min(100%, 938px);
   margin: 0 auto;
   background-color: #fefdfd;
   overflow: hidden;
@@ -26,7 +30,10 @@ body {
 }
 
 .home {
-  max-width: 938px;
+  /* lebar dibatasi 3 arah: max lebar desain, lebar layar, ATAU tinggi layar
+     dikonversi pakai rasio aspect-nya — yang paling kecil yang dipakai,
+     supaya box selalu pas masuk layar tanpa scroll */
+  width: min(938px, 100%, calc((100dvh - 24px) * 938 / 1408));
   aspect-ratio: 938 / 1408;
 }
 
@@ -71,7 +78,7 @@ body {
 }
 
 .landing {
-  max-width: 929px;
+  width: min(929px, 100%, calc((100dvh - 24px) * 929 / 1392));
   aspect-ratio: 929 / 1392;
 }
 
@@ -213,7 +220,7 @@ body {
 .track,
 .track2 {
   position: relative;
-  width: min(100%, 936px);
+  width: min(936px, 100%, calc((100dvh - 24px) * 936 / 1403));
   margin: 0 auto;
   aspect-ratio: 936 / 1403;
   background-color: #ffffff;
@@ -302,15 +309,10 @@ body {
    tanpa perlu aturan tambahan selain padding luar.
 ==================================================== */
 @media screen and (max-width: 768px) {
-  body {
-    padding: 12px;
-  }
-
   .home,
   .landing,
   .track,
   .track2 {
-    width: min(100%, calc(100vw - 24px));
     border-radius: 18px;
   }
 }
