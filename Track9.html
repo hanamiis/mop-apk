@@ -1,16 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
     <title>Track 9</title>
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="track">
-      <img class="img" src="img/track1.png" alt="Track 9" />
+      <img class="img" src="img/track9.png" alt="Track 9"/>
+      <button class="track-play-btn" type="button" data-audio="img/track2.mp3" aria-label="Putar lagu">▶</button>
       <a class="button-back-to-home" href="index.html" aria-label="Kembali ke home"></a>
+      <audio id="track-audio" src="img/track2.mp3"></audio>
     </main>
+    <script>
+      const playBtn = document.querySelector('.track-play-btn');
+      const audio = document.getElementById('track-audio');
+
+      if (playBtn && audio) {
+        playBtn.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play();
+            playBtn.textContent = '❚❚';
+          } else {
+            audio.pause();
+            playBtn.textContent = '▶';
+          }
+        });
+      }
+    </script>
   </body>
 </html>

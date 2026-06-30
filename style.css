@@ -7,6 +7,13 @@ body {
   background: linear-gradient(180deg, #f6f1ea 0%, #ece6df 100%);
 }
 
+/* ====================================================
+   .home dan .landing : sudah benar polanya.
+   Kuncinya: container punya aspect-ratio TETAP, jadi
+   semua child yang diposisikan pakai % akan selalu
+   proporsional di ukuran layar berapapun.
+==================================================== */
+
 .home,
 .landing {
   position: relative;
@@ -31,13 +38,15 @@ body {
   object-fit: cover;
 }
 
+/* sebelumnya: left:469px; top:1197px; width:225px; height:120px
+   sekarang dikonversi jadi % dari ukuran asli desain (938x1408) */
 .home .button-start {
   position: absolute;
-  left: 469px;
-  top: 1197px;
+  left: 50%;
+  top: 85.01%;
   transform: translate(-50%, -50%);
-  width: 225px;
-  height: 120px;
+  width: 23.99%;
+  height: 8.52%;
   padding: 10px;
   border: 0;
   background: transparent;
@@ -93,246 +102,215 @@ body {
   background: rgba(255,255,255,0.35);
 }
 
+/* Semua titik di bawah ini dikonversi dari px ke % berdasarkan
+   ukuran asli desain .landing (929 x 1392).
+   right%  = right_px  / 929  * 100
+   top%    = top_px    / 1392 * 100
+   width%  = width_px  / 929  * 100
+   height% = height_px / 1392 * 100
+   Catatan: min-width/min-height 44px & 40px dipertahankan supaya
+   area tap tetap nyaman disentuh walau gambar mengecil sekali. */
+
 .landing .track-link-1 {
-  right: 300px;
-  top: 926px;
+  right: 32.29%;
+  top: 66.52%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
-.landing .track-link-2{
-  right: 353px;
-  top: 882px;
+.landing .track-link-2 {
+  right: 37.99%;
+  top: 63.36%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
 .landing .track-link-3 {
-right: 420px;
-  top: 870px;
+  right: 45.21%;
+  top: 62.50%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
 .landing .track-link-4 {
- right: 487px;
-  top: 888px;
+  right: 52.42%;
+  top: 63.79%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
 .landing .track-link-5 {
-  right: 540px;
-  top: 931px;
+  right: 58.13%;
+  top: 66.88%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
 .landing .track-link-6 {
-  right: 565px;
-  top: 992px;
+  right: 60.82%;
+  top: 71.26%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
 .landing .track-link-7 {
-  right: 561px;
-  top: 1057px;
+  right: 60.39%;
+  top: 75.94%;
+  width: 5.60%;
+  height: 3.74%;
   border-radius: 50%;
-  width: 52px;
-  height: 52px;
   border: none;
   cursor: pointer;
   opacity: 0;
 }
 
 .landing .track-link-8 {
-  right: 532px;
-  top: 1114px;
+  right: 57.27%;
+  top: 80.03%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
 .landing .track-link-9 {
-  right: 479px;
-  top: 1153px;
+  right: 51.56%;
+  top: 82.83%;
+  width: 5.38%;
+  height: 3.59%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
   border: none;
   cursor: pointer;
 }
 
+/* ====================================================
+   .track dan .track2 : sebelumnya punya min-width:936px
+   dan min-height:1403px yang MEMAKSA lebar minimum,
+   sehingga di HP malah memunculkan scroll horizontal.
+   Sekarang disamakan polanya dengan .home/.landing:
+   width fleksibel + aspect-ratio tetap.
+==================================================== */
+
+.track,
+.track2 {
+  position: relative;
+  width: min(100%, 936px);
+  margin: 0 auto;
+  aspect-ratio: 936 / 1403;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border-radius: 28px;
+}
+
+.track .img,
+.track2 .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* top/left dikonversi dari px ke % dari ukuran asli (936 x 1403).
+   Posisi sebelumnya pakai `position: relative` yang membuat
+   letaknya tidak pasti (tergantung urutan elemen di HTML).
+   Diganti jadi `position: absolute` relatif ke .track / .track2,
+   sama seperti .frame di sebelahnya. */
+.track .track-play-btn,
+.track2 .track-play-btn {
+  position: absolute;
+  top: 65.22%;
+  left: 46.47%;
+  transform: translate(-50%, -50%);
+  width: 6.94%;
+  height: 4.63%;
+  border: none;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  color: #111;
+  font-size: clamp(14px, 2vw, 24px);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.track .button-back-to-home,
+.track2 .button-back-to-home {
+  position: absolute;
+  top: 80.61%;
+  left: 37.82%;
+  width: 23.50%;
+  height: 4.99%;
+  background-color: transparent;
+}
+
+.track .button-next,
+.track2 .button-next {
+  position: absolute;
+  top: 66.50%;
+  left: 62.50%;
+  background-color: #d9d9d9;
+  opacity: 0;
+}
+
+.track .frame,
+.track2 .frame {
+  position: absolute;
+  top: 65.15%;
+  left: 46.58%;
+  width: 6.84%;
+  height: 4.21%;
+  display: flex;
+}
+
+.track .sound-link,
+.track2 .sound-link {
+  width: 100%;
+  height: auto;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/* ====================================================
+   Responsif untuk layar kecil (HP/tablet).
+   Karena semua posisi anak sekarang pakai % dan container
+   pakai aspect-ratio tetap, ukuran apapun akan tetap pas
+   tanpa perlu aturan tambahan selain padding luar.
+==================================================== */
 @media screen and (max-width: 768px) {
   body {
     padding: 12px;
   }
 
   .home,
-  .landing {
+  .landing,
+  .track,
+  .track2 {
     width: min(100%, calc(100vw - 24px));
     border-radius: 18px;
   }
-}
-
-.track {
-  background-color: #ffffff;
-  width: 100%;
-  min-width: 936px;
-  min-height: 1403px;
-  position: relative;
-}
-
-.track .img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 936px;
-  height: 1403px;
-  aspect-ratio: 0.67;
-  object-fit: cover;
-}
-
-.track .track-play-btn {
-  position: relative;
-  top: 915px;
-  left: 435px;
-  width: 65px;
-  height: 65px;
-  border: none;
-  border-radius: 50%;
-  background: rgb(255, 255, 255);
-  color: #111;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-}
-
-.track .button-back-to-home {
-  position: absolute;
-  top: 1131px;
-  left: 354px;
-  width: 220px;
-  height: 70px;
-  background-color: transparent;
-}
-
-.track .button-next {
-  position: absolute;
-  top: 933px;
-  left: 585px;
-  background-color: #d9d9d9;
-  opacity: 0;
-}
-
-.track .frame {
-  position: absolute;
-  top: 914px;
-  left: 436px;
-  width: 64px;
-  height: 59px;
-  display: flex;
-}
-
-.track .sound-link {
-  width: 64px;
-  height: 26px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-
-.track2{
-  background-color: #ffffff;
-  width: 100%;
-  min-width: 936px;
-  min-height: 1403px;
-  position: relative;
-}
-
-.track2.img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 936px;
-  height: 1403px;
-  aspect-ratio: 0.67;
-  object-fit: cover;
-}
-
-.track2.track-play-btn {
-  position: relative;
-  top: 915px;
-  left: 435px;
-  width: 65px;
-  height: 65px;
-  border: none;
-  border-radius: 50%;
-  background: rgb(255, 255, 255);
-  color: #111;
-  font-size: 24px;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-}
-
-.track2.button-back-to-home {
-  position: absolute;
-  top: 1131px;
-  left: 354px;
-  width: 220px;
-  height: 70px;
-  background-color: transparent;
-}
-
-.track2.button-next {
-  position: absolute;
-  top: 933px;
-  left: 585px;
-  background-color: #d9d9d9;
-  opacity: 0;
-}
-
-.track2.frame {
-  position: absolute;
-  top: 914px;
-  left: 436px;
-  width: 64px;
-  height: 59px;
-  display: flex;
-}
-
-.track2.sound-link {
-  width: 64px;
-  height: 26px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
 }
