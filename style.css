@@ -33,8 +33,8 @@ body {
 
 .home .button-start {
   position: absolute;
-  left: 50%;
-  top: 85%;
+  left: 469px;
+  top: 1197px;
   transform: translate(-50%, -50%);
   width: 225px;
   height: 120px;
@@ -94,8 +94,8 @@ body {
 }
 
 .landing .track-link-1 {
-  right: 32.2%;
-  top: 66.4%;
+  right: 300px;
+  top: 926px;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -104,8 +104,8 @@ body {
 }
 
 .landing .track-link-2{
-  right:38%;
-  top: 63.3%;
+  right: 353px;
+  top: 882px;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -114,23 +114,38 @@ body {
 }
 
 .landing .track-link-3 {
-  left: 54%;
-  top: 29%;
+right: 420px;
+  top: 870px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
 }
 
 .landing .track-link-4 {
-  left: 18%;
-  top: 46%;
+ right: 487px;
+  top: 888px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
 }
 
 .landing .track-link-5 {
-  left: 36%;
-  top: 46%;
+  right: 540px;
+  top: 931px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
 }
 
 .landing .track-link-6 {
-  right:38%;
-  top: 63.3%;
+  right: 565px;
+  top: 992px;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -139,18 +154,19 @@ body {
 }
 
 .landing .track-link-7 {
-  right:60.5%;
-  top: 75.9%;
+  right: 561px;
+  top: 1057px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border: none;
   cursor: pointer;
+  opacity: 0;
 }
 
 .landing .track-link-8 {
- right: 57.2%;
-  top: 80.0%;
+  right: 532px;
+  top: 1114px;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -159,8 +175,8 @@ body {
 }
 
 .landing .track-link-9 {
-  right: 51.5%;
-  top: 82.9%;
+  right: 479px;
+  top: 1153px;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -168,7 +184,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     padding: 12px;
   }
@@ -240,6 +256,77 @@ body {
 }
 
 .track .sound-link {
+  width: 64px;
+  height: 26px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+.track2{
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 936px;
+  min-height: 1403px;
+  position: relative;
+}
+
+.track2.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 936px;
+  height: 1403px;
+  aspect-ratio: 0.67;
+  object-fit: cover;
+}
+
+.track2.track-play-btn {
+  position: relative;
+  top: 915px;
+  left: 435px;
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  color: #111;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.track2.button-back-to-home {
+  position: absolute;
+  top: 1131px;
+  left: 354px;
+  width: 220px;
+  height: 70px;
+  background-color: transparent;
+}
+
+.track2.button-next {
+  position: absolute;
+  top: 933px;
+  left: 585px;
+  background-color: #d9d9d9;
+  opacity: 0;
+}
+
+.track2.frame {
+  position: absolute;
+  top: 914px;
+  left: 436px;
+  width: 64px;
+  height: 59px;
+  display: flex;
+}
+
+.track2.sound-link {
   width: 64px;
   height: 26px;
   font-family: "Inter-Regular", Helvetica;
